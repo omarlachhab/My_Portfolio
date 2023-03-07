@@ -10,7 +10,7 @@ import RoundedLink from "./btn/RoundedLink";
 import RoundedButton from "./btn/RoundedButton";
 
 function navbar() {
-  const [toggleNavBar, setToggleNavBar] = useState(true);
+  const [toggleNavBar, setToggleNavBar] = useState(false);
   const [scrollPosition, setScrollPosition] = useState(0);
   useEffect(() => {
     window.addEventListener("scroll", () => {
