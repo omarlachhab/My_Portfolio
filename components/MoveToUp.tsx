@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import { FaAngleDoubleUp } from "react-icons/fa";
-import RoundedButton from "./btn/roundedButton";
+import RoundedButton from "./btn/RoundedButton";
 
 function moveToUp() {
   const scrollToTop = () => {

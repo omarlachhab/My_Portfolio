@@ -1,19 +1,18 @@
-import Navbar from "./components/navbar";
-import RoundedLink from "./components/btn/roundedLink";
-import RoundedButton from "./components/btn/roundedButton";
-import Skills from "./components/skills";
-import Project from "./components/projects";
-import Contact from "./components/contact";
+import Navbar from "../components/NavBar";
+import RoundedLink from "../components/btn/RoundedLink";
+import Skills from "../components/Skills";
+import Project from "../components/Projects";
+import Contact from "../components/Contact";
 import { FaLinkedinIn, FaGithub, FaAngleDoubleUp } from "react-icons/fa";
 import { GrDocumentUser } from "react-icons/gr";
 import { GoMail } from "react-icons/go";
 
 import Link from "next/link";
-import MoveToUp from "./components/moveToUp";
+import MoveToUp from "../components/MoveToUp";
 
 export default function Home() {
   return (
-    <main className="h-full w-full pb-28 ">
+    <main className="h-full w-full  pb-28">
       <Navbar />
       <div className="container mx-auto px-4 pt-16">
         <section className="flex flex-col items-center justify-center gap-5 px-4 pt-12 text-center text-gray-600 ">
@@ -116,13 +115,13 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="pt-16 pb-14 text-gray-600">
+        <section className=" pt-16 pb-14 text-gray-600">
           <div className="flex  w-full flex-col items-center justify-between gap-6 lg:items-start">
             <h1 className="text-2xl font-medium uppercase text-indigo-600 ">
               Projects
             </h1>
             <h2 className="text-3xl font-semibold ">What I've Built</h2>
-            <div className="grid w-full grid-cols-1 gap-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3">
+            <div className=" grid w-full grid-cols-1 gap-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3">
               <Project />
               <Project />
             </div>

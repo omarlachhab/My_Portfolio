@@ -6,29 +6,29 @@ import { HiMenu } from "react-icons/hi";
 import { GrDocumentUser } from "react-icons/gr";
 import { IoCloseOutline } from "react-icons/io5";
 import { GoMail } from "react-icons/go";
-import RoundedLink from "./btn/roundedLink";
-import RoundedButton from "./btn/roundedButton";
+import RoundedLink from "./btn/RoundedLink";
+import RoundedButton from "./btn/RoundedButton";
 
 function navbar() {
-  const [toggleNavBar, setToggleNavBar] = useState(false);
+  const [toggleNavBar, setToggleNavBar] = useState(true);
   const [scrollPosition, setScrollPosition] = useState(0);
   useEffect(() => {
     window.addEventListener("scroll", () => {
       setScrollPosition(window.pageYOffset);
     });
+    if (toggleNavBar) {
+      console.log("first");
+    }
   }, []);
   return (
     <div className="">
       {/*Mobile*/}
-      <div
-        className={`${
-          toggleNavBar ? "ranslate-y-[0] " : "translate-y-[-100%]"
-        } absolute top-0 z-[100] h-full w-full bg-black  opacity-30`}
-      ></div>
       <nav
         className={`${
-          toggleNavBar ? "ranslate-y-[0] " : "translate-y-[-100%]"
-        } absolute top-0 z-[100]  flex h-full w-full max-w-lg flex-col bg-[#ecf0f3] p-8  shadow-lg duration-300 ease-in-out`}
+          toggleNavBar
+            ? "ranslate-y-[0] "
+            : "translate-y-[-100%] overflow-hidden"
+        } fixed  top-0 z-30 flex h-screen w-screen  flex-col justify-between  bg-[#ecf0f3] p-8  shadow-lg duration-300 ease-in-out`}
       >
         {/*Head NavBar*/}
         <div className="flex flex-col gap-4">
@@ -66,9 +66,9 @@ function navbar() {
           </ul>
         </div>
         {/*Footer NavBar*/}
-        <div className="mt-auto h-52 w-full">
+        <div className="m-auto w-full">
           <h1>LET'S CONNECT</h1>
-          <div className="flex justify-start gap-10 pt-5">
+          <div className="m-auto flex justify-start gap-10 pt-5">
             <RoundedLink url="#">
               <FaLinkedinIn size={20} />
             </RoundedLink>
@@ -89,7 +89,7 @@ function navbar() {
       </nav>
       {/* Web */}
       <nav
-        className={`fixed  h-16 w-full bg-[#ecf0f3]  ${
+        className={`fixed z-20  h-16 w-full bg-[#ecf0f3]  ${
           scrollPosition && "shadow-md"
         }    md:px-4`}
       >

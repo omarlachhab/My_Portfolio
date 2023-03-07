@@ -1,5 +1,5 @@
 import React from "react";
-import RoundedLink from "../components/btn/roundedLink";
+import RoundedLink from "./btn/RoundedLink";
 import { FaLinkedinIn, FaGithub } from "react-icons/fa";
 import { GrDocumentUser } from "react-icons/gr";
 import { GoMail } from "react-icons/go";
