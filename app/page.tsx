@@ -15,7 +15,10 @@ export default function Home() {
     <main className="h-full w-full  pb-28">
       <Navbar />
       <div className="container mx-auto px-4 pt-16">
-        <section className="flex flex-col items-center justify-center gap-5 px-4 pt-12 text-center text-gray-600 ">
+        <section
+          id="home"
+          className="flex flex-col items-center justify-center gap-5 px-4 pt-12 text-center text-gray-600 "
+        >
           <p>LET'S BUILD SOMETHING TOGETHER</p>
           <div className="flex text-3xl font-bold lg:text-5xl">
             <h1 className="text-gray-700">Hi, I'm </h1>
@@ -47,7 +50,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="pt-16 text-gray-600">
+        <section id="about" className="pt-16 text-gray-600">
           <div className="flex flex-col items-center justify-between gap-6 lg:flex-row">
             <div className="flex flex-col items-center gap-4 lg:w-[150%] lg:items-start ">
               <h1 className="text-2xl font-medium uppercase text-indigo-600 ">

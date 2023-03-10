@@ -46,22 +46,22 @@ function navbar() {
         <div className="mt-10 w-full basis-2/4">
           <ul className="uppercase">
             <li className="pt-2 pb-2 text-lg font-thin">
-              <Link href={"#"}> Home</Link>
+              <Link href={"/#home"}> Home</Link>
             </li>
             <li className="pt-2 pb-2 text-lg font-thin">
-              <Link href={"#"}> About</Link>
+              <Link href={"/#about"}> About</Link>
             </li>
             <li className="pt-2 pb-2 text-lg font-thin">
-              <Link href={"#"}> Skills</Link>
+              <Link href={"/#skills"}> Skills</Link>
             </li>
             <li className="pt-2 pb-2 text-lg font-thin">
-              <Link href={"#"}> Projects</Link>
+              <Link href={"/#projects"}> Projects</Link>
             </li>
             <li className="pt-2 pb-2 text-lg font-thin">
-              <Link href={"#"}> Resume</Link>
+              <Link href={"/#resume"}> Resume</Link>
             </li>
             <li className="pt-2 pb-2 text-lg font-thin">
-              <Link href={"#"}> Contact</Link>
+              <Link href={"/#contact"}> Contact</Link>
             </li>
           </ul>
         </div>
@@ -99,22 +99,22 @@ function navbar() {
           </h2>
           <ul className="hidden  flex-row items-center justify-evenly gap-8 uppercase  md:flex">
             <li className="pt-2 pb-2 font-mono text-base text-gray-500">
-              <Link href={"#"}> Home</Link>
+              <Link href={"#home"}> Home</Link>
             </li>
             <li className="pt-2 pb-2 font-mono text-base text-gray-500">
-              <Link href={"#"}> About</Link>
+              <Link href={"#about"}> About</Link>
             </li>
             <li className="pt-2 pb-2 font-mono text-base text-gray-500">
-              <Link href={"#"}> Skills</Link>
+              <Link href={"#skills"}> Skills</Link>
             </li>
             <li className="pt-2 pb-2 font-mono text-base text-gray-500">
-              <Link href={"#"}> Projects</Link>
+              <Link href={"/#projects"}> Projects</Link>
             </li>
             <li className="pt-2 pb-2 font-mono text-base text-gray-500">
-              <Link href={"#"}> Resume</Link>
+              <Link href={"/#resume"}> Resume</Link>
             </li>
             <li className="pt-2 pb-2 font-mono text-base text-gray-500">
-              <Link href={"#"}> Contact</Link>
+              <Link href={"/#contact"}> Contact</Link>
             </li>
           </ul>
           <ul className="flex w-full  items-center justify-between px-6 md:hidden">
