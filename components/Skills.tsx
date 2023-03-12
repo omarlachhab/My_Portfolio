@@ -1,17 +1,18 @@
 import React from "react";
+import Image from "next/image";
 
 type props = {
   icon: string;
-  text: string;
+  name: string;
 };
 
 const skillsData: props[] = [
-  { icon: "/icons/javascript.svg", text: "javascript" },
-  { icon: "/icons/firebase.svg", text: "firebase" },
-  { icon: "/icons/github.svg", text: "github" },
-  { icon: "/icons/nextjs.svg", text: "nextjs" },
-  { icon: "/icons/react.svg", text: "react" },
-  { icon: "/icons/tailwindcss.svg", text: "tailwindcss" },
+  { icon: "/icons/javascript.svg", name: "javascript" },
+  { icon: "/icons/firebase.svg", name: "firebase" },
+  { icon: "/icons/github.svg", name: "github" },
+  { icon: "/icons/nextjs.svg", name: "nextjs" },
+  { icon: "/icons/react.svg", name: "react" },
+  { icon: "/icons/tailwindcss.svg", name: "tailwindcss" },
 ];
 
 function skills() {
@@ -26,9 +27,15 @@ function skills() {
           {skillsData.map((skill) => {
             return (
               <div className="flex w-52 items-center justify-evenly gap-3 rounded-md p-2 shadow-md hover:bg-gray-300">
-                <img className="w-14 rounded-md" src={skill.icon} alt="" />
+                <Image
+                  width="1"
+                  height="1"
+                  className="w-14 rounded-md"
+                  src={skill.icon}
+                  alt={skill.name}
+                />
                 <h1 className="text-lg font-bold text-gray-600">
-                  {skill.text}
+                  {skill.name}
                 </h1>
               </div>
             );

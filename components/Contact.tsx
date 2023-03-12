@@ -3,7 +3,7 @@ import RoundedLink from "./btn/RoundedLink";
 import { FaLinkedinIn, FaGithub } from "react-icons/fa";
 import { GrDocumentUser } from "react-icons/gr";
 import { GoMail } from "react-icons/go";
-
+import Image from "next/image";
 function contact() {
   return (
     <section className="pt-16 pb-14 text-gray-600">
@@ -14,11 +14,14 @@ function contact() {
         <h2 className="text-3xl font-semibold ">Get In Touch</h2>
         <div className="flex h-auto w-full flex-col justify-center gap-6 p-2 lg:flex-row lg:justify-start ">
           <div className="flex w-full flex-col items-center gap-1 rounded-md p-4 shadow-lg">
-            <img
-              className="h-60 w-60 rounded-full object-cover shadow-lg"
-              src="/images/about img 1.jpg"
+            <Image
+              width="100"
+              height="100"
               alt=""
+              src="/images/omarlachhab.jpg"
+              className="h-60 w-60 rounded-full object-cover shadow-lg"
             />
+
             <h1 className="pt-4 text-2xl font-bold">OMAR LACHHAB</h1>
             <h3 className="">A Full Stack And Game Developer</h3>
             <p className="pt-2">

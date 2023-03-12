@@ -1,5 +1,6 @@
 import Link from "next/link";
 import React from "react";
+import Image from "next/image";
 
 function About() {
   return (
@@ -31,18 +32,27 @@ function About() {
           </p>
         </div>
         <div className="grid w-full grid-cols-2 gap-6   md:grid-cols-3 lg:grid-cols-2">
-          <img
+          <Image
+            style={{ objectFit: "cover" }}
+            width="100"
+            height="100"
             className="col-span-full h-60 w-full rounded-2xl object-cover  shadow-lg shadow-gray-600 md:col-auto md:h-40 lg:col-span-full"
             src="/images/about img 1.jpg"
             alt=""
           />
-          <img
-            className=" h-40 w-full rounded-2xl shadow-lg shadow-gray-600 "
+          <Image
+            style={{ objectFit: "cover" }}
+            width="100"
+            height="100"
+            className=" h-40 w-full rounded-2xl shadow-lg shadow-gray-600"
             src="/images/about img 2.jpg"
             alt=""
           />
-          <img
-            className="h-40 w-full rounded-2xl shadow-lg shadow-gray-600 "
+          <Image
+            style={{ objectFit: "cover" }}
+            width="100"
+            height="100"
+            className="h-40 w-full rounded-2xl shadow-lg shadow-gray-600"
             src="/images/about img 3.jpg"
             alt=""
           />

@@ -1,13 +1,7 @@
 import Navbar from "../components/NavBar";
-import RoundedLink from "../components/btn/RoundedLink";
 import Skills from "../components/Skills";
 import Project from "../components/Projects";
 import Contact from "../components/Contact";
-import { FaLinkedinIn, FaGithub, FaAngleDoubleUp } from "react-icons/fa";
-import { GrDocumentUser } from "react-icons/gr";
-import { GoMail } from "react-icons/go";
-
-import Link from "next/link";
 import MoveToUp from "../components/MoveToUp";
 import About from "@/components/About";
 import TopSection from "@/components/TopSection";
