@@ -1,10 +1,49 @@
-import React from "react";
+"use client";
+import React, { MouseEventHandler, useState } from "react";
 import RoundedLink from "./btn/RoundedLink";
 import { FaLinkedinIn, FaGithub } from "react-icons/fa";
 import { GrDocumentUser } from "react-icons/gr";
 import { GoMail } from "react-icons/go";
 import Image from "next/image";
+import axios from "axios";
+
 function contact() {
+  const [name, setName] = useState("");
+  const [phone, setPhone] = useState("");
+  const [email, setEmail] = useState("");
+  const [subject, setSubject] = useState("");
+  const [message, setMessage] = useState("");
+
+  const handleSubmit = async (event: Event) => {
+    event.preventDefault();
+    const dataPost = {
+      name: name,
+      phone: phone,
+      email: email,
+      subject: subject,
+      message: message,
+      api_key: process.env.API_KEY || "123456",
+    };
+    try {
+      const { data, status } = await axios({
+        url: "http://localhost:3000/api/contact",
+        method: "POST",
+        data: dataPost,
+      });
+    } catch (err: any) {
+      if (err.response) {
+        // The client was given an error response (5xx, 4xx)
+        console.log(err.response.data);
+        console.log(err.response.status);
+        console.log(err.response.headers);
+      } else if (err.request) {
+        // The client never received a response, and the request was never left
+      } else {
+        // Anything else
+      }
+    }
+  };
+
   return (
     <section className="pt-16 pb-14 text-gray-600">
       <div className="flex  w-full flex-col items-center justify-between gap-6 lg:items-start">
@@ -47,67 +86,67 @@ function contact() {
               </RoundedLink>
             </div>
           </div>
-          <form
-            action=""
-            method="post"
-            className="w-full rounded-md p-4 shadow-lg"
-          >
-            <div className="flex h-auto w-full flex-col gap-3">
-              <div className="flex h-auto w-full flex-col gap-3 lg:flex-row">
-                <div className="flex w-full flex-col gap-1">
-                  <label className="uppercase text-gray-600">Name</label>
-                  <input
-                    className="h-12 w-full rounded-md  border-2 border-gray-300 px-3"
-                    type="text"
-                    name="name"
-                    placeholder="Name"
-                  />
-                </div>
-                <div className="flex w-full flex-col gap-1">
-                  <label className="uppercase text-gray-600">
-                    Phone number
-                  </label>
-                  <input
-                    className="h-12 w-full rounded-md  border-2 border-gray-300 px-3"
-                    type="text"
-                    name="phone"
-                    placeholder="Phone number"
-                  />
-                </div>
-              </div>
-              <div className="flex flex-col gap-1">
-                <label className="uppercase text-gray-600">Email</label>
+
+          <div className="flex h-auto w-full flex-col gap-3 rounded-md p-4 shadow-lg">
+            <div className="flex h-auto w-full flex-col gap-3 lg:flex-row">
+              <div className="flex w-full flex-col gap-1">
+                <label className="uppercase text-gray-600">Name</label>
                 <input
-                  className="h-12 w-full rounded-md  border-2 border-gray-300 px-3"
-                  type="email"
-                  name="email"
-                  placeholder="Email"
-                />
-              </div>
-              <div className="flex flex-col gap-1">
-                <label className="uppercase text-gray-600">Subject</label>
-                <input
+                  onChange={(e) => setName(e.target.value)}
                   className="h-12 w-full rounded-md  border-2 border-gray-300 px-3"
                   type="text"
-                  name="subject"
-                  placeholder="Subject"
+                  name="name"
+                  placeholder="Name"
                 />
               </div>
-              <div className="flex flex-col gap-1">
-                <label className="uppercase text-gray-600">Message</label>
-                <textarea
-                  className="h-32 w-full rounded-md  border-2 border-gray-300 px-3"
-                  name="Message"
-                  placeholder="Message"
-                ></textarea>
+              <div className="flex w-full flex-col gap-1">
+                <label className="uppercase text-gray-600">Phone number</label>
+                <input
+                  onChange={(e) => setPhone(e.target.value)}
+                  className="h-12 w-full rounded-md  border-2 border-gray-300 px-3"
+                  type="text"
+                  name="phone"
+                  placeholder="Phone number"
+                />
               </div>
+            </div>
+            <div className="flex flex-col gap-1">
+              <label className="uppercase text-gray-600">Email</label>
               <input
-                className="my-4 h-16 w-full rounded-xl bg-gradient-to-tr from-indigo-700 to-cyan-500 uppercase text-white "
-                type="submit"
-                value="Send Message"
+                onChange={(e) => setEmail(e.target.value)}
+                className="h-12 w-full rounded-md  border-2 border-gray-300 px-3"
+                type="email"
+                name="email"
+                placeholder="Email"
               />
             </div>
-          </form>
+            <div className="flex flex-col gap-1">
+              <label className="uppercase text-gray-600">Subject</label>
+              <input
+                onChange={(e) => setSubject(e.target.value)}
+                className="h-12 w-full rounded-md  border-2 border-gray-300 px-3"
+                type="text"
+                name="subject"
+                placeholder="Subject"
+              />
+            </div>
+            <div className="flex flex-col gap-1">
+              <label className="uppercase text-gray-600">Message</label>
+              <textarea
+                onChange={(e) => setMessage(e.target.value)}
+                className="h-32 w-full rounded-md  border-2 border-gray-300 px-3"
+                name="Message"
+                placeholder="Message"
+              ></textarea>
+            </div>
+            <button
+              onClick={(event: Event) => handleSubmit(event)}
+              className="my-4 h-16 w-full rounded-xl bg-gradient-to-tr from-indigo-700 to-cyan-500 uppercase text-white "
+              value="Send Message"
+            >
+              Send Message
+            </button>
+          </div>
         </div>
       </div>
     </section>
