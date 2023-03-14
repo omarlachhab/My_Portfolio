@@ -34,16 +34,16 @@ function About() {
         <div className="grid w-full grid-cols-2 gap-6   md:grid-cols-3 lg:grid-cols-2">
           <Image
             style={{ objectFit: "cover" }}
-            width="100"
-            height="100"
+            width="200"
+            height="200"
             className="col-span-full h-60 w-full rounded-2xl object-cover  shadow-lg shadow-gray-600 md:col-auto md:h-40 lg:col-span-full"
             src="/images/about img 1.jpg"
             alt=""
           />
           <Image
             style={{ objectFit: "cover" }}
-            width="100"
-            height="100"
+            width="200"
+            height="200"
             className=" h-40 w-full rounded-2xl shadow-lg shadow-gray-600"
             src="/images/about img 2.jpg"
             alt=""

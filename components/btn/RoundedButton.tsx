@@ -10,7 +10,7 @@ function roundedButton({ children, onClick }: Props) {
     <button
       aria-label=""
       onClick={onClick}
-      className="flex h-12 w-12 items-center justify-center rounded-full shadow-md hover:bg-slate-200"
+      className="flex h-12 w-12 items-center justify-center rounded-full shadow-md hover:bg-slate-200 "
     >
       {children}
     </button>

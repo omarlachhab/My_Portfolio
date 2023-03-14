@@ -1,11 +1,11 @@
-import { NextRequest, NextResponse } from "next/server";
+ 
 import nodemailer from "nodemailer";
 
 export async function POST(req: Request, res: Response) {
   const body = await req.json();
 
   let transporter = nodemailer.createTransport({
-    service: "Gmails",
+    service: "gmaild",
     auth: {
       user: "utchiha1996@gmail.com", // your gmail account
       pass: "yxsxhzjbffeqmeoq", // your gmail app password
@@ -18,21 +18,17 @@ export async function POST(req: Request, res: Response) {
     text: "Hello world?", // plain text body
     html: "<b>Hello world?</b>", // html body
   };
-  await transporter.sendMail(mailOption, (error, info) => {
+
+  transporter.sendMail(mailOption, (error, info) => {
     if (error) {
       console.log(error);
-      return Response.status(500);
+      return new Response('Error sending email', { status: 401 });
     } else {
       console.log("Email sent: " + info.response);
-      return NextResponse.json(
-        {
-          success: false,
-          message: "Auth failed",
-        },
-        {
-          status: 401,
-        }
-      );
+      return new Response('Sending message with successful', { status: 200 });
+
     }
   });
+
 }
+ 

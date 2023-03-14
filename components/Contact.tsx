@@ -5,7 +5,6 @@ import { FaLinkedinIn, FaGithub } from "react-icons/fa";
 import { GrDocumentUser } from "react-icons/gr";
 import { GoMail } from "react-icons/go";
 import Image from "next/image";
-import axios from "axios";
 
 function contact() {
   const [name, setName] = useState("");
@@ -25,22 +24,18 @@ function contact() {
       api_key: process.env.API_KEY || "123456",
     };
     try {
-      const { data, status } = await axios({
-        url: "http://localhost:3000/api/contact",
+      const response = await fetch("http://localhost:3000/api/contact", {
+        body : JSON.stringify(dataPost),
         method: "POST",
-        data: dataPost,
+        headers: { accept: "application/json" },
       });
-    } catch (err: any) {
-      if (err.response) {
-        // The client was given an error response (5xx, 4xx)
-        console.log(err.response.data);
-        console.log(err.response.status);
-        console.log(err.response.headers);
-      } else if (err.request) {
-        // The client never received a response, and the request was never left
-      } else {
-        // Anything else
+      if (!response.ok) {
+        throw new Error(`Error! status: ${response.status}`);
       }
+      const result = await response.json();
+      return result;
+    } catch (err: any) {
+      console.log(err);
     }
   };
 
@@ -54,8 +49,8 @@ function contact() {
         <div className="flex h-auto w-full flex-col justify-center gap-6 p-2 lg:flex-row lg:justify-start ">
           <div className="flex w-full flex-col items-center gap-1 rounded-md p-4 shadow-lg">
             <Image
-              width="100"
-              height="100"
+              width="200"
+              height="200"
               alt=""
               src="/images/omarlachhab.jpg"
               className="h-60 w-60 rounded-full object-cover shadow-lg"
@@ -140,7 +135,7 @@ function contact() {
               ></textarea>
             </div>
             <button
-              onClick={(event: Event) => handleSubmit(event)}
+              onClick={(event: any) => handleSubmit(event)}
               className="my-4 h-16 w-full rounded-xl bg-gradient-to-tr from-indigo-700 to-cyan-500 uppercase text-white "
               value="Send Message"
             >

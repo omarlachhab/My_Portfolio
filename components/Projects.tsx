@@ -43,8 +43,8 @@ function projects() {
             return (
               <div className="group relative  text-white">
                 <Image
-                  width="100"
-                  height="100"
+                  width="300"
+                  height="300"
                   className=" h-full w-full rounded-2xl object-cover "
                   src={project.img}
                   alt=""
