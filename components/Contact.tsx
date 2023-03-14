@@ -23,19 +23,22 @@ function contact() {
       message: message,
       api_key: process.env.API_KEY || "123456",
     };
+
     try {
       const response = await fetch("http://localhost:3000/api/contact", {
-        body : JSON.stringify(dataPost),
+        body: JSON.stringify(dataPost),
         method: "POST",
-        headers: { accept: "application/json" },
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
       });
-      if (!response.ok) {
-        throw new Error(`Error! status: ${response.status}`);
+
+      if (response.status === 200) {
+        console.log("Result :----> " + response.status);
       }
-      const result = await response.json();
-      return result;
     } catch (err: any) {
-      console.log(err);
+      console.log("Catch :----> ");
     }
   };
 

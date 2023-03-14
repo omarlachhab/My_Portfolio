@@ -39,9 +39,9 @@ function projects() {
         <h2 className="text-3xl font-semibold ">What I've Built</h2>
         <div className=" grid w-full grid-cols-1 gap-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3">
           {/* */}
-          {projectsData.map((project) => {
+          {projectsData.map((project, index) => {
             return (
-              <div className="group relative  text-white">
+              <div key={index} className="group relative  text-white">
                 <Image
                   width="300"
                   height="300"

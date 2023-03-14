@@ -24,9 +24,12 @@ function skills() {
         </h1>
         <h2 className="text-3xl font-semibold ">What I Can Do</h2>
         <div className="flex flex-wrap justify-center gap-7 md:justify-start ">
-          {skillsData.map((skill) => {
+          {skillsData.map((skill, index) => {
             return (
-              <div className="flex w-52 items-center justify-evenly gap-3 rounded-md p-2 shadow-md hover:bg-gray-300">
+              <div
+                key={index}
+                className="flex w-52 items-center justify-evenly gap-3 rounded-md p-2 shadow-md hover:bg-gray-300"
+              >
                 <Image
                   width="1"
                   height="1"
