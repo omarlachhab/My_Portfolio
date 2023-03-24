@@ -117,14 +117,14 @@ function navbar() {
               <Link href={"/#contact"}> Contact</Link>
             </li>
           </ul>
-          <ul className="flex w-full  items-center justify-between px-6 md:hidden">
+          <div className="flex w-full  items-center justify-between px-6 md:hidden">
             <h1 className=" text-xl font-bold uppercase">omar lachhab</h1>
-            <li className="pt-2 pb-2 text-lg font-thin ">
+            <div className="pt-2 pb-2 text-lg font-thin ">
               <RoundedButton onClick={() => setToggleNavBar(true)}>
                 <HiMenu size={20} />
               </RoundedButton>
-            </li>
-          </ul>
+            </div>
+          </div>
         </div>
       </nav>
     </div>
