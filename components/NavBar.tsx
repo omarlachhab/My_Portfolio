@@ -94,9 +94,9 @@ function navbar() {
         }    md:px-4`}
       >
         <div className="flex h-full w-full items-center justify-between">
-          <h2 className="hidden text-xl font-bold uppercase md:flex">
+          <h1 className="hidden text-xl font-bold uppercase md:flex">
             omar lachhab
-          </h2>
+          </h1>
           <ul className="hidden  flex-row items-center justify-evenly gap-8 uppercase  md:flex">
             <li className="pt-2 pb-2 font-mono text-base text-gray-500">
               <Link href={"#home"}> Home</Link>
@@ -118,7 +118,7 @@ function navbar() {
             </li>
           </ul>
           <ul className="flex w-full  items-center justify-between px-6 md:hidden">
-            <h2 className=" text-xl font-bold uppercase">omar lachhab</h2>
+            <h1 className=" text-xl font-bold uppercase">omar lachhab</h1>
             <li className="pt-2 pb-2 text-lg font-thin ">
               <RoundedButton onClick={() => setToggleNavBar(true)}>
                 <HiMenu size={20} />
