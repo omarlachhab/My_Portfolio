@@ -8,7 +8,7 @@ type Props = {
 function roundedButton({ children, onClick }: Props) {
   return (
     <button
-      aria-label=""
+      aria-label="Custom"
       onClick={onClick}
       className="flex h-12 w-12 items-center justify-center rounded-full shadow-md hover:bg-slate-200 "
     >
