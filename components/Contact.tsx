@@ -60,7 +60,7 @@ function contact() {
             />
 
             <h1 className="pt-4 text-2xl font-bold">OMAR LACHHAB</h1>
-            <h3 className="">A Full Stack And Game Developer</h3>
+            <h2 className="">A Full Stack And Game Developer</h2>
             <p className="pt-2">
               I am available for freelance or full-time positions. Contact me
               and let's talk.
